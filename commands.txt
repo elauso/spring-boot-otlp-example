@@ -1,4 +1,3 @@
-
 # Post product
 curl -i -H "Content-Type: application/json" http://localhost:8080/products -d '{"name":"test01","type":"CONVENIENCE"}'
 
