@@ -1,0 +1,9 @@
+
+# Post product
+curl -i -H "Content-Type: application/json" http://localhost:8080/products -d '{"name":"test01","type":"CONVENIENCE"}'
+
+# Get product
+curl -i http://localhost:8080/products/1
+
+# Metrics collector interface
+http://localhost:8888/metrics

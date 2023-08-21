@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: 'spring-boot-otlp-example'
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate.dialect: org.hibernate.dialect.MySQLDialect
+      hibernate.format_sql: true
+  datasource:
+    url: jdbc:mysql://localhost:3306/db_product
+    username: product
+    password: product
+
+logging:
+  level:
+    org.springframework: INFO
+    net.elau.example.springboototlpexample: DEBUG

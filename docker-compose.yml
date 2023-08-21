@@ -1,0 +1,28 @@
+version: "3"
+services:
+
+  mysql:
+    image: mysql:5.7
+    environment:
+      MYSQL_ROOT_PASSWORD: "root"
+      MYSQL_DATABASE: "db_product"
+      MYSQL_USER: "product"
+      MYSQL_PASSWORD: "product"
+    ports:
+      - "3306:3306"
+
+  otelcol:
+    image: otel/opentelemetry-collector-contrib:0.82.0
+    deploy:
+      resources:
+        limits:
+          memory: 125M
+    restart: unless-stopped
+    command: [ "--config=/etc/otelcol-config.yml" ]
+    volumes:
+      - ./otelcol-config.yml:/etc/otelcol-config.yml
+    ports:
+      - "4317:4317"
+      - "4318:4318"
+      - "9464:9464"
+      - "8888:8888"
