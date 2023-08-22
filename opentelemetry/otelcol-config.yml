@@ -2,18 +2,24 @@ receivers:
   otlp:
     protocols:
       grpc:
-      http:
 
 processors:
-  batch:
 
 exporters:
   prometheus:
-    endpoint: "localhost:8889"
+    endpoint: "0.0.0.0:8889"
+  jaeger:
+    endpoint: "jaeger:14250"
+    tls:
+      insecure: true
 
 service:
   pipelines:
+    traces:
+      receivers: [otlp]
+      processors: []
+      exporters: [jaeger]
     metrics:
       receivers: [otlp]
-      processors: [batch]
+      processors: []
       exporters: [prometheus]

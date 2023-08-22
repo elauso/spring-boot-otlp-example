@@ -4,5 +4,8 @@ curl -i -H "Content-Type: application/json" http://localhost:8080/products -d '{
 # Get product
 curl -i http://localhost:8080/products/1
 
-# Metrics collector interface
-http://localhost:8888/metrics
+# Prometheus metrics collector interface
+http://localhost:8889/metrics
+
+# Jaeger tracing interface
+http://localhost:16686/

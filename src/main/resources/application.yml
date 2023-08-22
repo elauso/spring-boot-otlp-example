@@ -17,3 +17,4 @@ logging:
   level:
     org.springframework: INFO
     net.elau.example.springboototlpexample: DEBUG
+  pattern.level: '%5p [${spring.application.name:},%mdc{trace_id:-},%mdc{span_id:-}]'
