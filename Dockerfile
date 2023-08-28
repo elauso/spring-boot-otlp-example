@@ -4,8 +4,6 @@ EXPOSE 8080
 
 ENV OTEL_METRICS_EXPORTER=otlp
 
-ENV OTEL_TRACES_EXPORTER=none
-
 WORKDIR /app
 
 COPY opentelemetry/opentelemetry-javaagent.jar build/

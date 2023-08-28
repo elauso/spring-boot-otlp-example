@@ -19,28 +19,50 @@ services:
     command: [ "--config=/etc/otelcol-config.yml" ]
     volumes:
       - ./opentelemetry/otelcol-config.yml:/etc/otelcol-config.yml
+    extra_hosts:
+      - "prometheus:127.0.0.1"
+      - "jaeger:127.0.0.1"
     ports:
       - "4317:4317" # OTLP gRPC receiver port
       - "8889:8889" # Promentheus exporter metrics
 
   prometheus:
     image: prom/prometheus:v2.37.9
-    container_name: prometheus
     ports:
       - "9090:9090"
+    expose:
+      - 9090
     volumes:
       - ./prometheus/config.yml:/etc/prometheus/prometheus.yml
+    depends_on:
+      - otelcol
+    networks:
+      - docker_network
 
   jaeger:
     image: jaegertracing/all-in-one:1.48.0
-    container_name: jaeger
     ports:
       - "6831:6831/udp"
       - "14250:14250"
       - "16686:16686"
+    expose:
+      - 6831
+      - 14250
+      - 16686
+    depends_on:
+      - otelcol
+    networks:
+      - docker_network
 
   grafana:
     image: grafana/grafana:9.5.8
-    container_name: grafana
     ports:
       - "3000:3000"
+    depends_on:
+      - prometheus
+    networks:
+      - docker_network
+
+networks:
+  docker_network:
+    driver: bridge
