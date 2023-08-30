@@ -8,10 +8,6 @@ spring:
     properties:
       hibernate.dialect: org.hibernate.dialect.MySQLDialect
       hibernate.format_sql: true
-  datasource:
-    url: jdbc:mysql://localhost:3306/db_product
-    username: product
-    password: product
 
 logging:
   level:

@@ -7,9 +7,9 @@ processors:
 
 exporters:
   prometheus:
-    endpoint: "127.0.0.1:8889"
+    endpoint: "0.0.0.0:8889"
   jaeger:
-    endpoint: "127.0.0.1:14250"
+    endpoint: "jaeger:14250"
     tls:
       insecure: true
 

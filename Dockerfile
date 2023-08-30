@@ -2,7 +2,13 @@ FROM openjdk:17-jdk-slim
 
 EXPOSE 8080
 
+ENV OTEL_TRACES_EXPORTER=otlp
+
 ENV OTEL_METRICS_EXPORTER=otlp
+
+ENV OTEL_EXPORTER_OTLP_ENDPOINT=http://otelcol:4317
+
+ENV OTEL_RESOURCE_ATTRIBUTES=service.name=spring-boot-otlp-example,service.version=0.0.1-SNAPSHOT
 
 WORKDIR /app
 
