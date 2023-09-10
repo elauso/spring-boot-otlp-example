@@ -6,15 +6,15 @@ Aplicação que exporta métricas e traces para o Prometheus e Jaeger, usando o 
 
 O Open-Telemetry é um conjunto de ferramentas usados para provê observabilidade da sua aplicação.
 
-É uma solução open-source, que surgiu com a fusão dos projetos Open-Cencus e Open-Tracing.
+É uma solução open-source, que surgiu com a fusão dos projetos Open-Census e Open-Tracing.
 
-É uma solução vendor-netutral, pois permite habilitar a observabilidade, usando coletores que exportam as métricas para diversas soluções como Prometheus, Jarger, etc, sem ficar preso a uma solução específica.
+É vendor-netutral, pois permite habilitar a observabilidade, usando coletores que exportam as métricas para diversas soluções como Prometheus, Jaeger (etc), sem ficar preso a uma solução específica.
 
 ![Alt text](./open-telemetry-collector.png?raw=true "Exemplo solução com open-telemetry")
 
 Imagem: https://www.giorgosdimtsas.net/blog/collecting-spring-boot-telemetry-data-with-opentelemetry/
 
-Nesse exemplo será usado o open-telemetry para coletar as métricas da aplicação, e exportá-las para os backends Prometheus e Jaeger. No final, exibiremos as métricas em um gráfico gerado no Grafana.
+Nesse projeto é usado o Open-Telemetry para coletar as métricas da aplicação, e exportá-las para os backends Prometheus e Jaeger. Ao final será exibida as métricas em um gráfico gerado no Grafana.
 
 ## Stack
 
@@ -47,15 +47,15 @@ Para consultar o produto registrado:
 
 ```curl -i http://localhost:8080/products/1```
 
-Para consultar as métricas registradas no open-telemetry:
+Para consultar as métricas registradas:
 
 http://localhost:8889/metrics
 
-Para visualizar o trace das chamadas:
+Para visualizar os traces das chamadas:
 
 http://localhost:16686/
 
-Para visualizar as métricas no dashboard no Grafana:
+Para visualizar as métricas no dashboard do Grafana:
 
 1. Acesse a interface web pelo link: http://localhost:3000
 2. Faça o login usando as credenciais default (admin/admin)
