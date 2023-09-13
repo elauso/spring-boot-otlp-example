@@ -8,7 +8,7 @@ O Open-Telemetry é um conjunto de ferramentas usados para provê observabilidad
 
 É uma solução open-source, que surgiu com a fusão dos projetos Open-Census e Open-Tracing.
 
-É vendor-netutral, pois permite habilitar a observabilidade, usando coletores que exportam as métricas para diversas soluções como Prometheus, Jaeger (etc), sem ficar preso a uma solução específica.
+É vendor-neutral, pois permite habilitar a observabilidade, usando coletores que exportam as métricas para diversas soluções como Prometheus, Jaeger (etc), sem ficar preso a uma solução específica.
 
 ![Alt text](./open-telemetry-collector.png?raw=true "Exemplo solução com open-telemetry")
 
