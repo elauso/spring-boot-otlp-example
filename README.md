@@ -14,7 +14,7 @@ O Open-Telemetry é um conjunto de ferramentas usados para provê observabilidad
 
 Imagem: https://www.giorgosdimtsas.net/blog/collecting-spring-boot-telemetry-data-with-opentelemetry/
 
-Nesse projeto é usado o Open-Telemetry para coletar as métricas da aplicação, e exportá-las para os backends Prometheus e Jaeger. Ao final será exibida as métricas em um gráfico gerado no Grafana.
+Nesse projeto é usado o Open-Telemetry para coletar as métricas da aplicação, e exporta-las para os backends Prometheus e Jaeger. Ao final será exibida as métricas em um gráfico gerado no Grafana.
 
 ## Stack
 
