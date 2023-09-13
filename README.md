@@ -1,10 +1,10 @@
-# Spring Boot Open Telemetry Example
+# Spring Boot Open-Telemetry Example
 
 Aplicação que exporta métricas e traces para o Prometheus e Jaeger, usando o Open-Telemetry.
 
 ## Sobre o Open-Telemetry
 
-O Open-Telemetry é um conjunto de ferramentas usados para provê observabilidade da sua aplicação
+O Open-Telemetry é um conjunto de ferramentas usados para provê observabilidade da sua aplicação.
 
 É uma solução open-source, que surgiu com a fusão dos projetos Open-Census e Open-Tracing.
 
